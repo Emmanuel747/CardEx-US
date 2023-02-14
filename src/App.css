@@ -1,0 +1,23 @@
+.appContainer {
+  margin: 0;
+  padding: 0;
+  background-color:rgba(223, 212, 207, 0.644);
+  min-height: 100vh;
+}
+
+.frontContainer {
+  display: flex;
+
+}
+.cardsForSaleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-height: 100vh;
+  overflow: auto;
+ 
+}
+
+.Toastify {
+  font-size: larger;
+}

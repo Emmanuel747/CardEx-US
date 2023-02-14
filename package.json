@@ -1,0 +1,77 @@
+{
+  "name": "cardex-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.0",
+    "bootstrap-scss": "^5.0.2",
+    "cors": "^2.8.5",
+    "date-and-time": "^1.0.1",
+    "dateformat": "^4.5.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "http-proxy-middleware": "^2.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-pro-sidebar": "^0.6.0",
+    "react-responsive-carousel": "^3.2.18",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
+    "react-transition-group": "^4.4.2",
+    "sass": "^1.35.1",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "launch": "react-scripts start",
+    "server:dev": "nodemon index.js",
+    
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "db:build": "node ./db/init_db",
+    "dev": "run-p dev:**",
+    "dev:server": "nodemon server.js",
+    "dev:app": "yarn start",
+    "build:app": "yarn build",
+    "start": "node server.js",
+    "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

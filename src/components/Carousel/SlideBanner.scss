@@ -1,0 +1,40 @@
+.CarouselContainer {
+    z-index: 0;
+    h3 {
+        background-color: rgba(0, 0, 0, 0.411);
+        /* padding: -3px; */
+    }
+    .subMSG {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h6 {
+            background-color: rgba(0, 0, 0, 0.411); 
+            width: 70%;
+            text-align: center;
+        }
+
+    }
+    .w-100 {
+        width: 100%!important;
+        height: 30vh;
+    }
+    .d-block {
+        display: block!important;
+    }
+    img {
+        vertical-align:baseline;  
+        object-fit: cover;
+        transform: scale(1);
+    }
+    .visa {
+        padding: 5px;
+        object-fit: contain;
+    }
+    h1 {
+        background: grey;
+    
+    }
+
+}
+

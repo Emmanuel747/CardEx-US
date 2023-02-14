@@ -1,0 +1,15 @@
+$sidebar-bg-color: #1d1d1d;
+
+// @import '~react-pro-sidebar/dist/scss/styles.scss';
+
+.pro-sidebar > .pro-sidebar-inner {
+    background: #232323;
+    height: 100%;
+    min-height: 100vh;
+    max-width: 20vw;
+    position: relative;
+    z-index: 101;
+}
+.pro-sidebar {
+    width: min-content;
+}

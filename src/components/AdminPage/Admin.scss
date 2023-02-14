@@ -1,0 +1,61 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: darkorange;
+  color: black;
+}
+
+img {
+  // height: 250px;
+  // width: 150px;
+}
+
+.adminOrders {
+  width: 30vw !important;
+  min-width: 337px;
+}
+
+.order-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-height: 100vh;
+  overflow: auto;
+  justify-items: center;
+  padding: 10px;
+  padding-left: 35px;
+}
+
+.orderDate {
+  color: brown;
+  font-weight: bold;
+  text-decoration: none !important;
+  margin-bottom: 0px !important;
+  margin-top: 10px !important;
+}
+
+.cardInput {
+
+  &:focus {
+    height: 40px;
+    text-overflow: auto;
+  }
+
+
+}
+
+textarea {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+input {
+  word-wrap: break-word;
+}
