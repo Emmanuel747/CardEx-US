@@ -1,11 +1,14 @@
 # Developer's notes
-1) Backend was built with Node.js and PostgreSQL
+Note: Backend was built with Node.js and PostgreSQL
+
+1) Open a Ubuntu terminal 
+2) Run the Steps below 
   - run command in linux terminal: sudo service postgresql start
   - Must create a local DB named cardex-dev
   - *To populate or reintialize* the Database run: "npm start db:build"
   - Next run "npm start server:dev"
 3) Open another terminal
-2) For first launch:
+4) For first launch:
   - Delete package-lock.json, node_modules folder
   - Run command "npm i" in your terminal
   - Run command "npm run launch"
