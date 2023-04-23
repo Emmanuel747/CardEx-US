@@ -34,7 +34,6 @@ const LoginPage  = ({setIsLoggedIn, setUser, notifySignup, notifyLogin, userDATA
     setErrMsgText("")
     try {
       const res = await userLogin(name, pass);
-      console.log(res);
       setErrMsgText("Welcome back " + name);
       setIsLoggedIn(true);
       setUser(res.user);
@@ -51,13 +50,11 @@ const LoginPage  = ({setIsLoggedIn, setUser, notifySignup, notifyLogin, userDATA
   }
   
   const SignupUser = async (e, name, pass, mail) => {
-    console.log(repassword, password)
     e.preventDefault();
     setErrMsgText("")
     if (repassword === password) {    
       try {
         const res = await userRegister(name, pass, mail);
-        console.log(res);
         setErrMsgText("Thank you for signing up.");
         notifySignup();
         setIsLoggedIn(true);
