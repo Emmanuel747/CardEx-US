@@ -42,8 +42,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start:Frontend": "react-scripts start",
-    "start:Database": "node ./db/init_db && nodemon server.js",
+    "start:frontend": "react-scripts start",
+    "start:database": "node ./db/init_db && nodemon server.js",
     "server:dev": "nodemon index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
