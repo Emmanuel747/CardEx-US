@@ -74,7 +74,10 @@ const PlayingCards = ({cards, setCards, reset,
       id,
       price,
       view_count,
-      quantity
+      quantity,
+      tag_game,
+      tag_condition,
+      tag_rarity
     } = card;
 
     return (
@@ -120,6 +123,9 @@ const PlayingCards = ({cards, setCards, reset,
             <span class="added-to-cart">Added to cart</span>
           </button>
         </div>
+        <div data-row={tag_game}/>
+        <div data-row={tag_condition}/>
+        <div data-row={tag_rarity}/>
       </div>
     );
   });
