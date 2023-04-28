@@ -45,6 +45,23 @@ cardsRouter.get("/:cardId", async (req, res, next) => {
   }
 });
 
+// get card by tagname [In progress]
+cardsRouter.get("/tag", async (req, res, next) => {
+  const { cardId } = req.params;
+
+  try {
+    const card = await getCardsById(cardId);
+    if (!card) {
+      next();
+    } else {
+      console.log(card);
+      res.send(card);
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
 cardsRouter.post("/", requireUser, async (req, res, next) => {
   // Math.floor(Math.random() * 100 );
   const { 

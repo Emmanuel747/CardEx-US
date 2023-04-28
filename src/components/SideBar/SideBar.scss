@@ -13,3 +13,10 @@ $sidebar-bg-color: #1d1d1d;
 .pro-sidebar {
     width: min-content;
 }
+.selected {
+  background-color: #4caf50; /* Change this to the desired color */
+  color: white;
+}
+.checkbox {
+  margin-right: 5px;
+}

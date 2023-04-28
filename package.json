@@ -20,12 +20,12 @@
     "date-and-time": "^1.0.1",
     "dateformat": "^4.5.1",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-fileupload": "^1.2.1",
     "http-proxy-middleware": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.22",
     "pg": "^8.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -42,9 +42,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "launch": "react-scripts start",
+    "start:frontend": "react-scripts start",
+    "start:database": "node ./db/init_db && nodemon server.js",
     "server:dev": "nodemon index.js",
-    
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

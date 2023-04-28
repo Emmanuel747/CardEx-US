@@ -1,12 +1,12 @@
 const { Client } = require("pg");
-const DB_NAME = "cardex-dev";
+const DB_NAME = "cardex";
 const DB_URL = process.env.DATABASE_URL || `https://localhost:5432/${DB_NAME}`;
 // const client = new Client(DB_URL);
 // const client = new Client(DB_URL || `postgres://localhost:5432/${DB_NAME}`);
 
 // uncomment for local postgres database
 const client = new Client({
-  connectionString: DB_URL || 'postgres://localhost:5432/cardex-dev',
+  connectionString: DB_URL || 'postgres://localhost:5432/cardex',
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined,
 });
 
@@ -127,18 +127,24 @@ async function createCard({
   price,
   card_img,
   view_count,
-  quantity
+  quantity,
+  tag_game,
+  tag_condition,
+  tag_rarity,
 }) {
   try {
     const {
       rows: [card],
     } = await client.query(
       `
-        INSERT INTO cards(card_title, description, price, card_img, view_count, quantity)
-        VALUES($1, $2, $3, $4, $5, $6)
+        INSERT INTO cards(card_title, description, price, 
+          tag_game, tag_condition, tag_rarity,
+          card_img, view_count, quantity
+        )
+        VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *;
       `,
-      [card_title, description, price, card_img, view_count, quantity]
+      [card_title, description, price, tag_game, tag_condition, tag_rarity, card_img, view_count, quantity]
     );
 
     return card;

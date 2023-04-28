@@ -76,6 +76,7 @@ const App = () => {
   const [userDATA, setUserDATA] = useState({});
   const [userTOKEN, setUserTOKEN] = useState(token);
   const sleepyyyyy = userInfo();
+  const [initialCards, setInitialCards] = useState([]);
 
   const getStoredCart = () => {
     const guestCart = localStorage.getItem("CardEXGCart");
@@ -113,9 +114,10 @@ const App = () => {
 
   const retrieveCards = () => {
     getAllCards()
-      .then((card) => {
-        setCards(card);
-        return card;
+      .then((cards) => {
+        setCards(cards);
+        setInitialCards(cards);
+        return cards;
       })
       .catch((err) => {
         console.log(err);
@@ -150,7 +152,11 @@ const App = () => {
           <div className="appContainer">
             <HomeBanner />
             <body className="frontContainer">
-              <LeftNavBar />
+              <LeftNavBar
+                initialCards={initialCards} 
+                resetCards={retrieveCards}
+                cards={cards} setCards={setCards}
+              />
               <div className="cardsForSaleContainer r">
                 <PlayingCards
                   cards={cards}
