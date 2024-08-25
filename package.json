@@ -36,7 +36,7 @@
     "react-responsive-carousel": "^3.2.18",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "4.0.3",
     "react-toastify": "^7.0.4",
     "react-transition-group": "^4.4.2",
     "sass": "^1.35.1",
@@ -82,7 +82,6 @@
     "aws-cdk-lib": "^2.154.1",
     "constructs": "^10.3.0",
     "esbuild": "^0.23.1",
-    "tsx": "^4.18.0",
-    "typescript": "^4.9.5"
+    "tsx": "^4.18.0"
   }
 }
