@@ -338,7 +338,7 @@ const createInitialUsers = async () => {
   try {
     const adminUser = {
       username: "admin",
-      password: "adminPassword123",
+      password: "admin21",
       email: "admin@gmail.com",
       admin: true,
     };

@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "aws-amplify": "^6.5.2",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
@@ -20,12 +21,12 @@
     "date-and-time": "^1.0.1",
     "dateformat": "^4.5.1",
     "dotenv": "^10.0.0",
-    "express": "^4.18.2",
+    "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "http-proxy-middleware": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22",
+    "nodemon": "^2.0.7",
     "pg": "^8.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -44,11 +45,11 @@
   "scripts": {
     "start:frontend": "react-scripts start",
     "start:database": "node ./db/init_db && nodemon server.js",
-    "server:dev": "nodemon index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "db:build": "node ./db/init_db",
+    "server:dev": "nodemon index.js",
     "dev": "run-p dev:**",
     "dev:server": "nodemon server.js",
     "dev:app": "yarn start",
@@ -73,5 +74,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.1.1",
+    "@aws-amplify/backend-cli": "^1.2.5",
+    "aws-cdk": "^2.154.1",
+    "aws-cdk-lib": "^2.154.1",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.23.1",
+    "tsx": "^4.18.0",
+    "typescript": "^5.5.4"
   }
 }
+
