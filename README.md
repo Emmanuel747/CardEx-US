@@ -3,7 +3,7 @@ Note: Backend was built with Node.js and PostgreSQL
 
 1) Open a Ubuntu terminal 
 2) Run the Steps below:
-  - run command in linux terminal: sudo service postgresql start
+  - run command in linux terminal: ``sudo service postgresql start``
   - Must create a local DB named ``cardex``
   - psql create DB command: ``<username>=# create database cardex;``
   - *To populate AND reintialize* the Database run: ``npm run start:database``
@@ -11,7 +11,7 @@ Note: Backend was built with Node.js and PostgreSQL
 3) Open another terminal
 4) If first launch continue else Skip to step 5:
   - Delete package-lock.json, node_modules folder
-  - Run command "npm i" in your terminal
+  - Run command ``npm i`` in your terminal
 5) Run command ``npm run start:frontend``
 
 Site should be running locally.
