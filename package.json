@@ -45,7 +45,7 @@
   "scripts": {
     "start:frontend": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "start:database": "node ./db/init_db && nodemon server.js",
-    "build": "react-scripts build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "db:build": "node ./db/init_db",
