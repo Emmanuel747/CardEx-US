@@ -1,12 +1,11 @@
-//Austin's middleware Version 
-// const createProxyMiddleware = require("http-proxy-middleware");
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-const { createProxyMiddleware } = require("http-proxy-middleware");
-const TARGET =
-  process.env.NODE_ENV === "development" ? "http://localhost:5075" : "";
-module.exports = (app) => {
+module.exports = function (app) {
   app.use(
-    "/api",
-    createProxyMiddleware({ target: TARGET, changeOrigin: true })
+    '/api',
+    createProxyMiddleware({
+      target: 'http://localhost:5075',
+      changeOrigin: true,
+    })
   );
 };

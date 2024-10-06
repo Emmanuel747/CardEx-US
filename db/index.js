@@ -1,14 +1,27 @@
-const { Client } = require("pg");
+// Load environment variables from .env file
+require('dotenv').config();
+
+const { Client } = require('pg');
 const DB_NAME = "cardex";
-const DB_URL = process.env.DATABASE_URL || `https://localhost:5432/${DB_NAME}`;
+const REMOTE_DB_URL = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:5432/${process.env.DB_NAME}`
+const DB_URL = REMOTE_DB_URL || `https://localhost:5432/${DB_NAME}`;
 // const client = new Client(DB_URL);
 // const client = new Client(DB_URL || `postgres://localhost:5432/${DB_NAME}`);
 
 // uncomment for local postgres database
+// const client = new Client({
+//   connectionString: DB_URL || 'postgres://localhost:5432/cardex',
+//   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined,
+// });
+
 const client = new Client({
-  connectionString: DB_URL || 'postgres://localhost:5432/cardex',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : undefined,
+  connectionString: DB_URL,
+  ssl: {
+    rejectUnauthorized: false // This is necessary if you are using a self-signed certificate
+  }
 });
+
+console.log(client)
 
 const bcrypt = require("bcrypt");
 const { isCompositeComponent } = require("react-dom/test-utils");
@@ -476,7 +489,7 @@ async function deleteCardFromCart(itemId) {
         RETURNING *;
       `, [itemId]
     );
-      console.log(deletedCard, "Eman Test")
+    console.log(deletedCard, "Eman Test")
     return deletedCard;
   } catch (error) {
     console.error("Could not delete card");
@@ -755,7 +768,7 @@ async function createUserAddress({ userId, street, state, zip_code }) {
 async function joinAddressToUser(userId) {
   try {
     const { rows: userAddress } = await client.query(
-    `
+      `
     SELECT users.id
     FROM users
     INNER JOIN user_address ON "userId" = users.id

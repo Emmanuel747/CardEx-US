@@ -76,7 +76,7 @@ async function buildTables() {
                 "cardId" INTEGER REFERENCES cards(ID),
                 name TEXT,
                 img TEXT
-            )
+            );
         `);
   } catch (error) {
     throw error;
@@ -84,255 +84,255 @@ async function buildTables() {
 }
 
 const createInitialCards = async () => {
-    console.log("starting to create initial cards")
-    try {
-      const cardsToCreate = [
-        {
-          card_title: "2003-04 Lebron James Topps Rookie",
-          description: "mint condition LBJ rookie card",
-          tag_game: "nba",
-          tag_condition: "sealed",
-          tag_rarity: "epic",
-          price: "1200",
-          view_count: "25",
-          card_img:
-            "https://th.bing.com/th/id/R4ec8fb7fe602023e56a0950eab2b69c6?rik=fF8DNf3Q%2bOblsQ&pid=ImgRaw",
-          quantity: 20
-        },
-        {
-          card_title: "Thanos - Boss Edition",
-          description: "You could not live with your own failure. And where did that bring you? Back to me.",
-          price: "35",
-          tag_game: "marvel",
-          tag_condition: "like new",
-          tag_rarity: "uncommon",
-          view_count: "453",
-          card_img: "https://wallpapercave.com/wp/wp4220291.jpg",
-          quantity: 10
-        },
-        {
-          card_title: "Fleer 1988 Reggie Miller Rookie Card",
-          description: "Good condition Reggie Miller Rookie Card Rare PSA 9",
-          price: "300",
-          tag_game: "nba",
-          tag_condition: "used",
-          tag_rarity: "uncommon",
-          view_count: "278",
-          card_img:
-            "https://images-na.ssl-images-amazon.com/images/I/512KpkGffQL._SY300_QL70_.jpg",
-          quantity: 40
-        },
-        {
-          card_title: "1st Edition Charizard PSA 10",
-          description:
-            "Super rare Charizard PSA 10 only a few in the entire world",
-          price: "750000",
-          tag_game: "pokemon",
-          tag_condition: "sealed",
-          tag_rarity: "legendary",
-          view_count: "4679",
-          card_img:
-            "https://dilxwvfkfup17.cloudfront.net/eyJpdiI6IjB3Q1Y2SndXMEdkQks4LzVPbnVHL2c9PSIsInZhbHVlIjoiTjE2Z1pRdUQ3MTRXODZqUXJaRTBYUTAvbHAwS1l5VEFnc1grTWNnai9UYnlDbmVybnJ2aEI5S1Bhd3J0VzZsbGljU05GcGo4UGxoR0hXSWxDVlN1aHc9PSIsIm1hYyI6IjA0YmQxYmU5M2QwMjczMGM3MTMwYmZjMmYyNzI0ZTQ4Y2M0NjM2NWIxZTFjMDI1NDIwMjY1ZmNhNDcyMDNkNTkiLCJ0YWciOiIifQ==",
-          quantity: 25
-        },
-        {
-          card_title: "1st edition Pikachu 1999",
-          description:
-            "Good condition Pikachu card 1st edition card. Great for any collector",
-          price: "60",
-          tag_game: "pokemon",
-          tag_condition: "damaged",
-          tag_rarity: "common",
-          view_count: "140",
-          card_img:
-            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1067923.jpg",
-          quantity: 17
-        },
-        {
-          card_title: "2001 Bowman Drew Brees Rookie Card",
-          description: "Great condition, card has slight wear on top left corner",
-          price: "25",
-          tag_game: "nfl",
-          tag_condition: "used",
-          tag_rarity: "common",
-          view_count: "9",
-          card_img:
-            "https://th.bing.com/th/id/OIP.abIUBSuuMwn2UoVumn57aAHaKY?pid=ImgDet&rs=1",
-          quantity: 52
-        },
-        {
-          card_title: "1998 Fleer Peyton Manning Rookie Autograph ",
-          description:
-            "Peyton Manning autograph and slabbed, the Sherrif himself autographed this",
-          price: "240",
-          tag_game: "nfl",
-          tag_condition: "used",
-          tag_rarity: "common",
-          view_count: "920",
-          card_img:
-            "https://th.bing.com/th/id/Rc4f63effff1a396de855a4922ced8953?rik=k1id3JtnW8KzGg&riu=http%3a%2f%2fcdn.sportsmemorabilia.com%2fsports-product-image%2f34-t4204666-2000.jpg&ehk=Bl4VYsp%2bo8LKk%2bkKMstHjsZIF%2fUrwpA4EdO%2fqQizPHI%3d&risl=&pid=ImgRaw",
-          quantity: 104
-        },
-        {
-          card_title: "1st Edition Squirtle",
-          description:
-            "1st edition Squirtle, card is in great condition and would be great for any pokemon collector",
-          price: "45",
-          tag_game: "pokemon",
-          tag_condition: "like new",
-          tag_rarity: "common",
-          view_count: "148",
-          card_img:
-            "https://th.bing.com/th/id/OIP.pGWduX1sZhiz3JPDtyC3rQAAAA?pid=ImgDet&rs=1",
-          quantity: 250
-        },
-        {
-          card_title: "1st Edition Venusaur PSA 10",
-          description:
-            "1st edition Venusaur PSA 10 gem-mint super Rare, perfect for any pokemon collector",
-          price: "560",
-          tag_game: "pokemon",
-          tag_condition: "sealed",
-          tag_rarity: "rare",
-          view_count: "97",
-          card_img:
-            "https://i.ebayimg.com/00/s/MTE1Mlg3Njg=/z/v3UAAOSw7bla~WOX/$_58.JPG",
-          quantity: 9
-        },
-        {
-          card_title: "2018-19 Prizm Trae Young Rookie Auto /75",
-          description:
-            "Trae Young rare rookie autograph, Beckett 9.5, buy while you still can!",
-          price: "1100",
-          tag_game: "nba",
-          tag_condition: "like new",
-          tag_rarity: "uncommon",
-          view_count: "169",
-          card_img: "https://i.ebayimg.com/images/g/zlYAAOSwuTpfSEbG/s-l300.jpg",
-          quantity: 6
-        },
-        {
-          card_title: "2017 Panini Select Alvin Kamara auto",
-          description:
-            "Alvin Kamara Rookie Signatures PSA gem mint 10, WHO DAT NATION",
-          price: "450",
-          tag_game: "nfl",
-          tag_condition: "like new",
-          tag_rarity: "uncommon",
-          view_count: "211",
-          card_img:
-            "https://i.pinimg.com/originals/5a/c7/9c/5ac79c77896bb53f7c0cb6f900822857.jpg",
-          quantity: 45
-        },
-        {
-          card_title: "2005 Topps Chrome Chris Paul Rookie",
-          description: "CP3 topps chrome rookie card, PSA 10 gem mint",
-          price: "1500",
-          tag_game: "nba",
-          tag_condition: "sealed",
-          tag_rarity: "rare",
-          view_count: "320",
-          card_img: "https://i.ebayimg.com/images/g/Zj0AAOSwGBtfMAdX/s-l400.jpg",
-          quantity: 30
-        },
-        {
-          card_title: "2015-16 Donruss Devin Booker RPA",
-          description: "Devin Booker Donruss Rookie Patch Auto 05/99 SSP",
-          price: "1350",
-          tag_game: "nba",
-          tag_condition: "like new",
-          tag_rarity: "rare",
-          view_count: "278",
-          card_img:
-            "https://img.beckett.com/images/items/12181139/marketplace/89164669/front.jpg",
-          quantity: 89
-        },
-        {
-          card_title: "2018 Select Darius Leonard Rookie Auto",
-          description:
-            "Darius Leonard Rookie autograph, SSP perfect for any colts collector",
-          price: "110",
-          tag_game: "mlb",
-          tag_condition: "damaged",
-          tag_rarity: "common",
-          view_count: "79",
-          card_img:
-            "https://kronozio.blob.core.windows.net/images/card/3fc70f4270cc489dafbb9f30c8aa90fb_front.jpg",
-          quantity: 16
-        },
-        {
-          card_title: "Rainbow Pikachu Vmax",
-          description:
-            "extremely rare pikachu card, the rainbow Pikachu is highly sought after",
-          price: "450",
-          tag_game: "pokemon",
-          tag_condition: "like new",
-          tag_rarity: "rare",
-          view_count: "934",
-          card_img:
-            "https://www.hillscards.co.uk/images/pokemon-trading-card-game-188-185-pikachu-vmax-rare-rainbow-card-swsh-04-vivid-voltage-p63051-100501_image.jpg",
-          quantity: 32
-        },
-        {
-          card_title: "Magic Black Lotus (beta)",
-          description:
-            "the rarest of all Magic the gathering cards, great condition",
-          price: "55000",
-          tag_game: "magic",
-          tag_condition: "sealed",
-          tag_rarity: "legendary",
-          view_count: "189",
-          card_img:
-            "https://th.bing.com/th/id/OIP._e_a5ZxVcLp52zoNebZwPAAAAA?pid=ImgDet&rs=1",
-          quantity: 28
-        },
-        {
-          card_title: "Magic Ancestral Recall (alpha)",
-          description: "extremely rare Magic the gathering card",
-          price: "25000",
-          tag_game: "magic",
-          tag_condition: "sealed",
-          tag_rarity: "legendary",
-          view_count: "669",
-          card_img:
-            "https://c1.scryfall.com/file/scryfall-cards/large/front/4/6/46b0a5c2-ac85-448e-9e87-12fc74fd4147.jpg?1559591672",
-          quantity: 9
-        },
-        {
-          card_title: "Magic Mox Ruby (alpha)",
-          description:
-            "One of the hardest Magic cards to find, great for any collector",
-          price: "10000",
-          tag_game: "magic",
-          tag_condition: "sealed",
-          tag_rarity: "rare",
-          view_count: "57",
-          card_img:
-            "https://product-images.tcgplayer.com/fit-in/400x558/9146.jpg",
-          quantity: 88
-        },
-        {
-          card_title: "2020 Donruss Kenny Moore autograph",
-          description:
-            "Donruss autograph from the best Corner in the league, Kenny Moore",
-          price: "25",
-          tag_game: "nfl",
-          tag_condition: "used",
-          tag_rarity: "common",
-          view_count: "74",
-          card_img: "https://ansel.frgimages.com/indianapolis-colts/kenny-moore-2020-panini-donruss-signature-marks-auto-orange-number-sm-km_ss2_p-13135175+u-arok0v015ruubndfw70z+v-63fddd7d438d4a7d85c57fb87aae1a08.jpg?_hv=2&w=600",
-          quantity: 230
-        }
-      ];
-        const products = await Promise.all(cardsToCreate.map(createCard))
-        console.log("Cards created:")
-        console.log(products)
-        console.log("finished creating cards")
-    } catch (error) {
-        throw error
-    }
+  console.log("starting to create initial cards")
+  try {
+    const cardsToCreate = [
+      {
+        card_title: "2003-04 Lebron James Topps Rookie",
+        description: "mint condition LBJ rookie card",
+        tag_game: "nba",
+        tag_condition: "sealed",
+        tag_rarity: "epic",
+        price: "1200",
+        view_count: "25",
+        card_img:
+          "https://th.bing.com/th/id/R4ec8fb7fe602023e56a0950eab2b69c6?rik=fF8DNf3Q%2bOblsQ&pid=ImgRaw",
+        quantity: 20
+      },
+      {
+        card_title: "Thanos - Boss Edition",
+        description: "You could not live with your own failure. And where did that bring you? Back to me.",
+        price: "35",
+        tag_game: "marvel",
+        tag_condition: "like new",
+        tag_rarity: "uncommon",
+        view_count: "453",
+        card_img: "https://wallpapercave.com/wp/wp4220291.jpg",
+        quantity: 10
+      },
+      {
+        card_title: "Fleer 1988 Reggie Miller Rookie Card",
+        description: "Good condition Reggie Miller Rookie Card Rare PSA 9",
+        price: "300",
+        tag_game: "nba",
+        tag_condition: "used",
+        tag_rarity: "uncommon",
+        view_count: "278",
+        card_img:
+          "https://images-na.ssl-images-amazon.com/images/I/512KpkGffQL._SY300_QL70_.jpg",
+        quantity: 40
+      },
+      {
+        card_title: "1st Edition Charizard PSA 10",
+        description:
+          "Super rare Charizard PSA 10 only a few in the entire world",
+        price: "750000",
+        tag_game: "pokemon",
+        tag_condition: "sealed",
+        tag_rarity: "legendary",
+        view_count: "4679",
+        card_img:
+          "https://dilxwvfkfup17.cloudfront.net/eyJpdiI6IjB3Q1Y2SndXMEdkQks4LzVPbnVHL2c9PSIsInZhbHVlIjoiTjE2Z1pRdUQ3MTRXODZqUXJaRTBYUTAvbHAwS1l5VEFnc1grTWNnai9UYnlDbmVybnJ2aEI5S1Bhd3J0VzZsbGljU05GcGo4UGxoR0hXSWxDVlN1aHc9PSIsIm1hYyI6IjA0YmQxYmU5M2QwMjczMGM3MTMwYmZjMmYyNzI0ZTQ4Y2M0NjM2NWIxZTFjMDI1NDIwMjY1ZmNhNDcyMDNkNTkiLCJ0YWciOiIifQ==",
+        quantity: 25
+      },
+      {
+        card_title: "1st edition Pikachu 1999",
+        description:
+          "Good condition Pikachu card 1st edition card. Great for any collector",
+        price: "60",
+        tag_game: "pokemon",
+        tag_condition: "damaged",
+        tag_rarity: "common",
+        view_count: "140",
+        card_img:
+          "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1067923.jpg",
+        quantity: 17
+      },
+      {
+        card_title: "2001 Bowman Drew Brees Rookie Card",
+        description: "Great condition, card has slight wear on top left corner",
+        price: "25",
+        tag_game: "nfl",
+        tag_condition: "used",
+        tag_rarity: "common",
+        view_count: "9",
+        card_img:
+          "https://th.bing.com/th/id/OIP.abIUBSuuMwn2UoVumn57aAHaKY?pid=ImgDet&rs=1",
+        quantity: 52
+      },
+      {
+        card_title: "1998 Fleer Peyton Manning Rookie Autograph ",
+        description:
+          "Peyton Manning autograph and slabbed, the Sherrif himself autographed this",
+        price: "240",
+        tag_game: "nfl",
+        tag_condition: "used",
+        tag_rarity: "common",
+        view_count: "920",
+        card_img:
+          "https://th.bing.com/th/id/Rc4f63effff1a396de855a4922ced8953?rik=k1id3JtnW8KzGg&riu=http%3a%2f%2fcdn.sportsmemorabilia.com%2fsports-product-image%2f34-t4204666-2000.jpg&ehk=Bl4VYsp%2bo8LKk%2bkKMstHjsZIF%2fUrwpA4EdO%2fqQizPHI%3d&risl=&pid=ImgRaw",
+        quantity: 104
+      },
+      {
+        card_title: "1st Edition Squirtle",
+        description:
+          "1st edition Squirtle, card is in great condition and would be great for any pokemon collector",
+        price: "45",
+        tag_game: "pokemon",
+        tag_condition: "like new",
+        tag_rarity: "common",
+        view_count: "148",
+        card_img:
+          "https://th.bing.com/th/id/OIP.pGWduX1sZhiz3JPDtyC3rQAAAA?pid=ImgDet&rs=1",
+        quantity: 250
+      },
+      {
+        card_title: "1st Edition Venusaur PSA 10",
+        description:
+          "1st edition Venusaur PSA 10 gem-mint super Rare, perfect for any pokemon collector",
+        price: "560",
+        tag_game: "pokemon",
+        tag_condition: "sealed",
+        tag_rarity: "rare",
+        view_count: "97",
+        card_img:
+          "https://i.ebayimg.com/00/s/MTE1Mlg3Njg=/z/v3UAAOSw7bla~WOX/$_58.JPG",
+        quantity: 9
+      },
+      {
+        card_title: "2018-19 Prizm Trae Young Rookie Auto /75",
+        description:
+          "Trae Young rare rookie autograph, Beckett 9.5, buy while you still can!",
+        price: "1100",
+        tag_game: "nba",
+        tag_condition: "like new",
+        tag_rarity: "uncommon",
+        view_count: "169",
+        card_img: "https://i.ebayimg.com/images/g/zlYAAOSwuTpfSEbG/s-l300.jpg",
+        quantity: 6
+      },
+      {
+        card_title: "2017 Panini Select Alvin Kamara auto",
+        description:
+          "Alvin Kamara Rookie Signatures PSA gem mint 10, WHO DAT NATION",
+        price: "450",
+        tag_game: "nfl",
+        tag_condition: "like new",
+        tag_rarity: "uncommon",
+        view_count: "211",
+        card_img:
+          "https://i.pinimg.com/originals/5a/c7/9c/5ac79c77896bb53f7c0cb6f900822857.jpg",
+        quantity: 45
+      },
+      {
+        card_title: "2005 Topps Chrome Chris Paul Rookie",
+        description: "CP3 topps chrome rookie card, PSA 10 gem mint",
+        price: "1500",
+        tag_game: "nba",
+        tag_condition: "sealed",
+        tag_rarity: "rare",
+        view_count: "320",
+        card_img: "https://i.ebayimg.com/images/g/Zj0AAOSwGBtfMAdX/s-l400.jpg",
+        quantity: 30
+      },
+      {
+        card_title: "2015-16 Donruss Devin Booker RPA",
+        description: "Devin Booker Donruss Rookie Patch Auto 05/99 SSP",
+        price: "1350",
+        tag_game: "nba",
+        tag_condition: "like new",
+        tag_rarity: "rare",
+        view_count: "278",
+        card_img:
+          "https://img.beckett.com/images/items/12181139/marketplace/89164669/front.jpg",
+        quantity: 89
+      },
+      {
+        card_title: "2018 Select Darius Leonard Rookie Auto",
+        description:
+          "Darius Leonard Rookie autograph, SSP perfect for any colts collector",
+        price: "110",
+        tag_game: "mlb",
+        tag_condition: "damaged",
+        tag_rarity: "common",
+        view_count: "79",
+        card_img:
+          "https://kronozio.blob.core.windows.net/images/card/3fc70f4270cc489dafbb9f30c8aa90fb_front.jpg",
+        quantity: 16
+      },
+      {
+        card_title: "Rainbow Pikachu Vmax",
+        description:
+          "extremely rare pikachu card, the rainbow Pikachu is highly sought after",
+        price: "450",
+        tag_game: "pokemon",
+        tag_condition: "like new",
+        tag_rarity: "rare",
+        view_count: "934",
+        card_img:
+          "https://www.hillscards.co.uk/images/pokemon-trading-card-game-188-185-pikachu-vmax-rare-rainbow-card-swsh-04-vivid-voltage-p63051-100501_image.jpg",
+        quantity: 32
+      },
+      {
+        card_title: "Magic Black Lotus (beta)",
+        description:
+          "the rarest of all Magic the gathering cards, great condition",
+        price: "55000",
+        tag_game: "magic",
+        tag_condition: "sealed",
+        tag_rarity: "legendary",
+        view_count: "189",
+        card_img:
+          "https://th.bing.com/th/id/OIP._e_a5ZxVcLp52zoNebZwPAAAAA?pid=ImgDet&rs=1",
+        quantity: 28
+      },
+      {
+        card_title: "Magic Ancestral Recall (alpha)",
+        description: "extremely rare Magic the gathering card",
+        price: "25000",
+        tag_game: "magic",
+        tag_condition: "sealed",
+        tag_rarity: "legendary",
+        view_count: "669",
+        card_img:
+          "https://c1.scryfall.com/file/scryfall-cards/large/front/4/6/46b0a5c2-ac85-448e-9e87-12fc74fd4147.jpg?1559591672",
+        quantity: 9
+      },
+      {
+        card_title: "Magic Mox Ruby (alpha)",
+        description:
+          "One of the hardest Magic cards to find, great for any collector",
+        price: "10000",
+        tag_game: "magic",
+        tag_condition: "sealed",
+        tag_rarity: "rare",
+        view_count: "57",
+        card_img:
+          "https://product-images.tcgplayer.com/fit-in/400x558/9146.jpg",
+        quantity: 88
+      },
+      {
+        card_title: "2020 Donruss Kenny Moore autograph",
+        description:
+          "Donruss autograph from the best Corner in the league, Kenny Moore",
+        price: "25",
+        tag_game: "nfl",
+        tag_condition: "used",
+        tag_rarity: "common",
+        view_count: "74",
+        card_img: "https://ansel.frgimages.com/indianapolis-colts/kenny-moore-2020-panini-donruss-signature-marks-auto-orange-number-sm-km_ss2_p-13135175+u-arok0v015ruubndfw70z+v-63fddd7d438d4a7d85c57fb87aae1a08.jpg?_hv=2&w=600",
+        quantity: 230
+      }
+    ];
+    const products = await Promise.all(cardsToCreate.map(createCard))
+    console.log("Cards created:")
+    console.log(products)
+    console.log("finished creating cards")
+  } catch (error) {
+    throw error
+  }
 }
- 
+
 const createInitialUsers = async () => {
   console.log("Starting to create intital users");
   try {
