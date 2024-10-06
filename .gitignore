@@ -24,5 +24,8 @@ yarn-error.log*
 
 /Admin_LocalFiles
 
-/.env
+# Environment variables
+.env
+
+# dotenv environment variables file
 .env
