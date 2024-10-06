@@ -60,6 +60,7 @@ usersRouter.get("/:userId", async (req, res, next) => {
 });
 
 usersRouter.post("/register", async (req, res, next) => {
+  console.log("trying to make user")
   const { username, password, email } = req.body;
 
   try {

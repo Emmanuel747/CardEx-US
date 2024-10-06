@@ -35,9 +35,9 @@ apiRouter.use(async (req, res, next) => {
           req.user = await getUserById(userInfo.id);
           next();
         } else {
-          next({ 
-            name: 'Error 747: Bad Token', 
-            message: 'Please Relog for a fresh Authorization Token.' 
+          next({
+            name: 'Error 747: Bad Token',
+            message: 'Please Relog for a fresh Authorization Token.'
           });
         }
       } catch ({ name, message }) {
@@ -52,7 +52,7 @@ apiRouter.use(async (req, res, next) => {
       });
 
     }
-      
+
   }
 });
 

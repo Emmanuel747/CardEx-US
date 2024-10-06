@@ -24,16 +24,16 @@ client.connect()
   .then(() => console.log('Connected to the database'))
   .catch(err => console.error('Connection error', err.stack));
 
-// API route to read data from the database
-server.get('/api/cards', async (req, res) => {
-  try {
-    const result = await client.query('SELECT * FROM cards');
-    res.json(result.rows);
-  } catch (error) {
-    console.error('Error reading from database:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+// // API route to read data from the database
+// server.get('/api/cards', async (req, res) => {
+//   try {
+//     const result = await client.query('SELECT * FROM cards');
+//     res.json(result.rows);
+//   } catch (error) {
+//     console.error('Error reading from database:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 
 server.use("/api", require("./routes")); // Updated path if necessary
 

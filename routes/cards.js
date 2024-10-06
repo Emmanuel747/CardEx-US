@@ -1,21 +1,17 @@
 const express = require("express");
 const cardsRouter = express.Router();
-const jwt = require("jsonwebtoken");
-const { JWT_SECRET } = process.env;
-const { requireUser, requireAdmin } = require("./utils");
+const { requireUser } = require("./utils");
 const {
   getAllCards,
   createCard,
   updateViewCount,
   patchCards,
   getCardsById,
-  getCardUserById,
   deleteCard,
 } = require("../db");
 
 cardsRouter.use((req, res, next) => {
   console.log("A request is being made to /cards");
-
   next();
 });
 
@@ -64,10 +60,10 @@ cardsRouter.get("/tag", async (req, res, next) => {
 
 cardsRouter.post("/", requireUser, async (req, res, next) => {
   // Math.floor(Math.random() * 100 );
-  const { 
-    card_title, 
-    description, price, 
-    card_img, view_count, 
+  const {
+    card_title,
+    description, price,
+    card_img, view_count,
     quantity,
   } = req.body;
   const cardData = {};
@@ -142,7 +138,6 @@ cardsRouter.patch("/:cardId", requireUser, async (req, res, next) => {
 cardsRouter.delete("/:cardId", requireUser, async (req, res, next) => {
   const { cardId } = req.params;
   try {
-    // const card = await getCardsById(cardId);
     if (!req.user.admin) {
       next({
         name: "Access Error",
